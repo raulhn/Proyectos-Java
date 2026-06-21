@@ -6,7 +6,18 @@
     'https://picsum.photos/800/500?random=4',
     'https://picsum.photos/800/500?random=5',
     'https://picsum.photos/800/500?random=6',
-    'https://picsum.photos/800/500?random=7',
+    'https://picsum.photos/800/500?random=7'
   ]"
 ></app-carousel>
 
+<!-- Ejemplo de uso del SearchSelectComponent con opciones que incluyen acentos -->
+<h2>Selector con acentos</h2>
+<app-search-select
+  [options]="[
+    { id: 'arbol', label: 'Árbol' },
+    { id: 'nino', label: 'Niño' },
+    { id: 'hola', label: '¡Hola!' },
+    { id: 'cafe', label: 'Café' }
+  ]"
+  placeholder="Buscar…"
+></app-search-select>

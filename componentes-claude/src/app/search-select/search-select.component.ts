@@ -33,9 +33,10 @@ export class SearchSelectComponent implements AfterViewInit {
   }
 
   updateFiltered(): void {
-    const text = this.filterText?.toLowerCase() ?? '';
+    const clean = (s: string): string => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const textNorm = clean(this.filterText ?? '').toLowerCase();
     this.filteredOptions = this.options.filter(
-      (o) => o.label.toLowerCase().includes(text)
+      o => clean(o.label).toLowerCase().includes(textNorm)
     );
     this.highlightIndex = this.filteredOptions.length ? 0 : -1;
   }

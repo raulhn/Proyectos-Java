@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/datatable/datatable.component.scss"],
+  "sourcesContent": ["/* DataTable component styles */\n\n.datatable {\n  margin: 1rem;\n}\n\n.toolbar {\n  display: flex;\n  gap: 0.5rem;\n  margin-bottom: 0.5rem;\n}\n\ninput[type='text'] {\n  padding: 0.25rem 0.5rem;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n\nbutton {\n  background-color: #007bff;\n  color: white;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background-color: #0069d9;\n}\n\ntable {\n  width: 100%;\n  border-collapse: collapse;\n}\n\n.selected {\n  background-color: #007bff;\n  color: white;\n}\n\nth,\ntd {\n  text-align: left;\n  border-bottom: 1px solid #ddd;\n}\n\nth {\n  .selected {\n    background-color: #007bff;\n    color: white;\n  }\n  background-color: #f8f9fa;\n}\n\n.unselected {\n  color: gray;\n}\n"],
+  "mappings": ";AAEA,CAAA;AACE,UAAA;;AAGF,CAAA;AACE,WAAA;AACA,OAAA;AACA,iBAAA;;AAGF,KAAA,CAAA;AACE,WAAA,QAAA;AACA,UAAA,IAAA,MAAA;AACA,iBAAA;;AAGF;AACE,oBAAA;AACA,SAAA;AACA,UAAA;AACA,iBAAA;AACA,UAAA;;AAGF,MAAA;AACE,oBAAA;;AAGF;AACE,SAAA;AACA,mBAAA;;AAGF,CAAA;AACE,oBAAA;AACA,SAAA;;AAGF;AAAA;AAEE,cAAA;AACA,iBAAA,IAAA,MAAA;;AAGF;AAKE,oBAAA;;AAJA,GAAA,CAZF;AAaI,oBAAA;AACA,SAAA;;AAKJ,CAAA;AACE,SAAA;;",
+  "names": []
+}

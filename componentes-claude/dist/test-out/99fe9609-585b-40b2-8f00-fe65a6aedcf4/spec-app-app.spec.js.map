@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.spec.ts"],
+  "sourcesContent": ["import { TestBed } from '@angular/core/testing';\nimport { App } from './app';\n\ndescribe('App', () => {\n  beforeEach(async () => {\n    await TestBed.configureTestingModule({\n      imports: [App],\n    }).compileComponents();\n  });\n\n  it('should create the app', () => {\n    const fixture = TestBed.createComponent(App);\n    const app = fixture.componentInstance;\n    expect(app).toBeTruthy();\n  });\n\n  it('should render title', () => {\n    const fixture = TestBed.createComponent(App);\n    fixture.detectChanges();\n    const compiled = fixture.nativeElement as HTMLElement;\n    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, prueba-datatable');\n  });\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;;;AACA;AAEA,aAAS,OAAO,MAAK;AACnB,iBAAW,MAAW;AACpB,cAAM,QAAQ,uBAAuB;UACnC,SAAS,CAAC,GAAG;SACd,EAAE,kBAAiB;MACtB,EAAC;AAED,SAAG,yBAAyB,MAAK;AAC/B,cAAM,UAAU,QAAQ,gBAAgB,GAAG;AAC3C,cAAM,MAAM,QAAQ;AACpB,eAAO,GAAG,EAAE,WAAU;MACxB,CAAC;AAED,SAAG,uBAAuB,MAAK;AAC7B,cAAM,UAAU,QAAQ,gBAAgB,GAAG;AAC3C,gBAAQ,cAAa;AACrB,cAAM,WAAW,QAAQ;AACzB,eAAO,SAAS,cAAc,IAAI,GAAG,WAAW,EAAE,UAAU,yBAAyB;MACvF,CAAC;IACH,CAAC;;;",
+  "names": []
+}

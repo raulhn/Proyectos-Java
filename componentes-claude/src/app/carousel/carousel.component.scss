@@ -1,0 +1,46 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+
+  .slides {
+    display: flex; /* importante */
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+
+  .slides-dragging {
+    display: flex;
+    will-change: transform;
+  }
+
+  .slides > .slide {
+    flex: 0 0 auto; /* evita que se encojan */
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+
+  .slides-dragging > .slide {
+    flex: 0 0 auto; /* evita que se encojan */
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #fff;
+  }
+}
+
+.container {
+  border: 1px solid black;
+  width: 90%;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-slide {
+  width: 100%;
+  display: block;
+}

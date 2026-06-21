@@ -1,0 +1,17 @@
+<div class="main-container">
+  <div class="container">
+    <div class="carousel">
+      <div
+        [ngClass]="isDragging ? 'slides-dragging' : 'slides'"
+        #slideContainer
+        [style.transform]="translateX"
+      >
+        @for (image of images; track image) {
+          <div class="slide" [style.width]="anchoSlide">
+            <img class="imagen-slide" [src]="image" alt="slide" />
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

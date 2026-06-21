@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/carousel/carousel.component.scss"],
+  "sourcesContent": [".carousel {\n  position: relative;\n  width: 100%;\n  overflow: hidden;\n  user-select: none; /* prevent text dragging */\n\n  .slides {\n    display:flex;\n    > .slide {\n      flex: 0 0 calc(100% / var(--slides-to-show));\n      object-fit: cover;\n      height:auto;\n      box-sizing:border-box;\n      background-color:#fff;\n      border: 1px solid #fff; /* visual separation */\n    }\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,YAAA;AACA,SAAA;AACA,YAAA;AACA,uBAAA;AAAA,eAAA;;AAEA,CANF,SAME,CAAA;AACE,WAAA;;AACA,CARJ,SAQI,CAFF,OAEE,EAAA,CAAA;AACE,QAAA,EAAA,EAAA,KAAA,KAAA,EAAA,IAAA;AACA,cAAA;AACA,UAAA;AACA,cAAA;AACA,oBAAA;AACA,UAAA,IAAA,MAAA;;",
+  "names": []
+}

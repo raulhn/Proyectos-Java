@@ -1,0 +1,23 @@
+<div class="search-select" #container>
+  <input type="text"
+         [(ngModel)]="filterText"
+         (input)="updateFiltered()"
+         (focus)="openDropdown()"
+         (keydown.down)="onArrow($event)"
+         (keydown.up)="onArrow($event)"
+         (keydown.enter)="onArrow($event)"
+         [placeholder]="placeholder"
+         class="select-input" />
+
+  <div *ngIf="isOpen && filteredOptions.length"
+       #dropdown
+       class="options"
+       [class.above]="above">
+    <div *ngFor="let opt of filteredOptions; let i = index"
+         (mousedown)="selectOption(opt)"
+         [class.highlighted]="i === highlightIndex"
+         class="option-item" >
+      {{opt.label}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/search-select/search-select.component.scss"],
+  "sourcesContent": ["search-select {\n  display: inline-block;\n}\n.search-select {\n  position: relative;\n  width: 100%;\n}\n.select-input {\n  width: 100%;\n  box-sizing: border-box;\n  padding: .4rem .6rem;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  font-size: 1rem;\n}\n.options {\n  position: absolute;\n  left: 0; right: 0;\n  background: white;\n  border: 1px solid #aaa;\n  box-shadow: 0 2px 6px rgba(0,0,0,.15);\n  z-index: 1000;\n  max-height: 200px;\n  overflow-y: auto;\n  margin-top: .4rem;       // para posicionar debajo\n}\n.options.above {\n  bottom: 100%;\n  top: auto;\n  margin-bottom: .4rem;\n  margin-top: 0;\n}\n.option-item {\n  padding: .5rem .6rem;\n  cursor: pointer;\n}\n.option-item:hover,\n.highlighted { background-color: #e6f7ff; }\n"],
+  "mappings": ";AAAA;AACE,WAAA;;AAEF,CAAA;AACE,YAAA;AACA,SAAA;;AAEF,CAAA;AACE,SAAA;AACA,cAAA;AACA,WAAA,OAAA;AACA,UAAA,IAAA,MAAA;AACA,iBAAA;AACA,aAAA;;AAEF,CAAA;AACE,YAAA;AACA,QAAA;AAAS,SAAA;AACT,cAAA;AACA,UAAA,IAAA,MAAA;AACA,cAAA,EAAA,IAAA,IAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;AACA,WAAA;AACA,cAAA;AACA,cAAA;AACA,cAAA;;AAEF,CAXA,OAWA,CAAA;AACE,UAAA;AACA,OAAA;AACA,iBAAA;AACA,cAAA;;AAEF,CAAA;AACE,WAAA,OAAA;AACA,UAAA;;AAEF,CAJA,WAIA;AAAA,CAAA;AACe,oBAAA;;",
+  "names": []
+}

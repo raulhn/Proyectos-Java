@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/datatable-large.spec.ts"],
+  "sourcesContent": ["import { TestBed } from '@angular/core/testing';\nimport { App } from './app';\nimport { DataTableComponent } from './datatable/datatable.component';\nimport { By } from '@angular/platform-browser';\n\ndescribe('App component with large data', () => {\n  let fixture: any;\n\n  beforeEach(async () => {\n    await TestBed.configureTestingModule({\n      imports: [App]\n    }).compileComponents();\n    fixture = TestBed.createComponent(App);\n    fixture.detectChanges(); // trigger bindings and ngOnChanges\n  });\n\n  it('should render DataTable with at least 10 pages of results', () => {\n    const datatableDebugEl = fixture.debugElement.query(By.directive(DataTableComponent));\n    expect(datatableDebugEl).toBeTruthy();\n    const datatableComp: any = datatableDebugEl.componentInstance;\n\n    // The DataTable component exposes totalPages\n    expect(datatableComp.totalPages).toBeGreaterThanOrEqual(10, 'DataTable should have 10 or more pages');\n  });\n});"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AACA;AACA;AACA;AAEA,aAAS,iCAAiC,MAAK;AAC7C,UAAI;AAEJ,iBAAW,MAAW;AACpB,cAAM,QAAQ,uBAAuB;UACnC,SAAS,CAAC,GAAG;SACd,EAAE,kBAAiB;AACpB,kBAAU,QAAQ,gBAAgB,GAAG;AACrC,gBAAQ,cAAa;MACvB,EAAC;AAED,SAAG,6DAA6D,MAAK;AACnE,cAAM,mBAAmB,QAAQ,aAAa,MAAM,GAAG,UAAU,kBAAkB,CAAC;AACpF,eAAO,gBAAgB,EAAE,WAAU;AACnC,cAAM,gBAAqB,iBAAiB;AAG5C,eAAO,cAAc,UAAU,EAAE,uBAAuB,IAAI,wCAAwC;MACtG,CAAC;IACH,CAAC;;;",
+  "names": []
+}

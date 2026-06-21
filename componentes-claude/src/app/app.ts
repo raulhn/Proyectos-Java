@@ -13,6 +13,15 @@ import { CarouselComponent } from './carousel/carousel.component';
 export class App {
   protected readonly title = signal('prueba-datatable');
 
+  cabeceras = ['Nombre', 'Edad', 'Ciudad'];
+  datos: any[] = [
+    { name: 'Alice', age: 30, city: 'New York' },
+    { name: 'Bob', age: 25, city: 'Los Angeles' },
+    { name: 'Charlie', age: 35, city: 'Chicago' },
+    { name: 'David', age: 28, city: 'Houston' },
+    { name: 'Eva', age: 32, city: 'Phoenix' },
+  ];
+
   // Sample data for the datatable component
   sampleData = [
     { name: 'Élice', age: 30, email: 'alice@example.com' },

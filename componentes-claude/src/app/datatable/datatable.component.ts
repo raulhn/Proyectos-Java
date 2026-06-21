@@ -1,4 +1,12 @@
-import { Component, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ChangeDetectionStrategy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -7,10 +15,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './datatable.component.html',
   styleUrls: ['./datatable.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataTableComponent implements OnChanges {
   @Input() data: any[] = [];
+  @Input() cabeceras: string[] = [];
 
   filteredData: any[] = []; // full filtered data
 
@@ -30,7 +39,6 @@ export class DataTableComponent implements OnChanges {
     this.rowSelected.emit(row);
   }
 
-
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
       this.columns = this.data.length ? Object.keys(this.data[0]) : [];
@@ -49,7 +57,6 @@ export class DataTableComponent implements OnChanges {
     this.applyFilter(); // reapply filter which will also sort
   }
 
-
   onFilterChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.filterText = input.value;
@@ -62,11 +69,11 @@ export class DataTableComponent implements OnChanges {
       this.filteredData = [...this.data];
     } else {
       const normalize = (s: string) => s.normalize('NFD').replace(/\p{Diacritic}/gu, '');
-      this.filteredData = this.data.filter(row =>
-        Object.values(row).some(v => {
+      this.filteredData = this.data.filter((row) =>
+        Object.values(row).some((v) => {
           const str = typeof v === 'string' ? v : String(v);
           return normalize(str.toLowerCase()).includes(normalize(text));
-        })
+        }),
       );
     }
 
@@ -89,18 +96,18 @@ export class DataTableComponent implements OnChanges {
     this.adjustCurrentPage();
   }
 
-// Sorting state
-    get totalPages(): number {
-      return Math.max(1, Math.ceil(this.filteredData.length / this.pageSize));
-    }
+  // Sorting state
+  get totalPages(): number {
+    return Math.max(1, Math.ceil(this.filteredData.length / this.pageSize));
+  }
 
-    goToPage(page: number): void {
-      if (page >= 1 && page <= this.totalPages) {
-        this.currentPage = page;
-      }
+  goToPage(page: number): void {
+    if (page >= 1 && page <= this.totalPages) {
+      this.currentPage = page;
     }
+  }
 
-// Sorting state
+  // Sorting state
   sortColumn: string | null = null;
   sortDirection: 'asc' | 'desc' = 'asc';
 
@@ -149,14 +156,16 @@ export class DataTableComponent implements OnChanges {
     const headers = Object.keys(this.data[0] || {});
     const csvRows = [headers.join(',')];
     for (const row of this.filteredData) {
-      const csvRow = headers.map(h => {
-        const val = row[h];
-        if (typeof val === 'string') {
-          // escape quotes
-          return `"${val.replace(/"/g, '""')}"`;
-        }
-        return String(val);
-      }).join(',');
+      const csvRow = headers
+        .map((h) => {
+          const val = row[h];
+          if (typeof val === 'string') {
+            // escape quotes
+            return `"${val.replace(/"/g, '""')}"`;
+          }
+          return String(val);
+        })
+        .join(',');
       csvRows.push(csvRow);
     }
     const csvContent = csvRows.join('\n');

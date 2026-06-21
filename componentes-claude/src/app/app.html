@@ -6,7 +6,7 @@
     'https://picsum.photos/800/500?random=4',
     'https://picsum.photos/800/500?random=5',
     'https://picsum.photos/800/500?random=6',
-    'https://picsum.photos/800/500?random=7'
+    'https://picsum.photos/800/500?random=7',
   ]"
 ></app-carousel>
 
@@ -17,7 +17,9 @@
     { id: 'arbol', label: 'Árbol' },
     { id: 'nino', label: 'Niño' },
     { id: 'hola', label: '¡Hola!' },
-    { id: 'cafe', label: 'Café' }
+    { id: 'cafe', label: 'Café' },
   ]"
   placeholder="Buscar…"
 ></app-search-select>
+
+<app-datatable [data]="datos" , [cabeceras]="cabeceras"></app-datatable>

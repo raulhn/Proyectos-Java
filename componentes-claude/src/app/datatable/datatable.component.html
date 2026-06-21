@@ -8,7 +8,7 @@
     <table>
       <thead>
         <tr>
-          @for (col of columns; track col) {
+          @for (col of cabeceras; track col) {
             <th (click)="sortData(col)" [class.active]="sortColumn === col">
               {{ col | titlecase }}
               @if (sortColumn === col && sortDirection === 'asc') {
@@ -44,24 +44,35 @@
   }
   @if (totalPages > 1) {
     <div class="pagination">
-      <button type="button" (click)="goToPage(1)" [disabled]="currentPage===1">1</button>
-      <button type="button" (click)="prevPage()" [disabled]="currentPage===1">Prev</button>
+      <button type="button" (click)="goToPage(1)" [disabled]="currentPage === 1">1</button>
+      <button type="button" (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
 
       @if (pageNumbers.length && pageNumbers[0] > 2) {
         <span>…</span>
       }
 
       @for (p of pageNumbers; track p; let i = $index) {
-        <span *ngIf="i>0 && p - pageNumbers[i-1] > 1">…</span>
-        <button type="button" (click)="goToPage(p)" [disabled]="p===currentPage" [class.active]="p===currentPage">{{p}}</button>
+        <span *ngIf="i > 0 && p - pageNumbers[i - 1] > 1">…</span>
+        <button
+          type="button"
+          (click)="goToPage(p)"
+          [disabled]="p === currentPage"
+          [class.active]="p === currentPage"
+        >
+          {{ p }}
+        </button>
       }
 
-      @if (pageNumbers.length && pageNumbers[pageNumbers.length-1] < totalPages - 1) {
+      @if (pageNumbers.length && pageNumbers[pageNumbers.length - 1] < totalPages - 1) {
         <span>…</span>
       }
 
-      <button type="button" (click)="nextPage()" [disabled]="currentPage===totalPages">Next</button>
-      <button type="button" (click)="goToPage(totalPages)" [disabled]="currentPage===totalPages">{{totalPages}}</button>
+      <button type="button" (click)="nextPage()" [disabled]="currentPage === totalPages">
+        Next
+      </button>
+      <button type="button" (click)="goToPage(totalPages)" [disabled]="currentPage === totalPages">
+        {{ totalPages }}
+      </button>
     </div>
   }
 
@@ -82,3 +93,4 @@
     <p>No data available.</p>
   </ng-template>
 </div>
+
